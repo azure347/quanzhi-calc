@@ -1,0 +1,112 @@
+# 创业指数数据来源：按行业创业密度换算
+# entrepreneurship_score = 100 - (entrepreneurship_rate × 8)
+# 行业创业密度分级：高/中/低/极低，对应分数经过调整以符合"天坑劝退"语义
+#
+# 高创业密度行业 → 当老板容易 → 天坑低（20-35分）
+# 中创业密度行业 → 当老板较容易 → 天坑中低（35-50分）
+# 低创业密度行业 → 当老板难 → 天坑中高（50-65分）
+# 极低创业密度行业 → 当老板极难 → 天坑高（65-80分）
+#
+# major_id,entrepreneurship_score,notes
+
+# 工科 → 稳定就业，创业比例低-中
+cs,35,计算机：IT从业者创业比例高，但"当老板"需资源整合
+software_eng,30,软件工程：同上，但更偏向技术打工
+mechanical,60,机械：制造业创业门槛高，设备/资金要求高
+ee,55,电气：国企就业多，创业比例中低
+civil,65,土木：项目制，创业需资质和人脉
+architecture,55,建筑：设计院打工为主，创业比例中
+aerospace,70,航天航空：国企主导，创业极难
+energy,60,能源：国企/央企为主
+food_science,55,食品科学：餐饮创业容易但规模小
+food_science_v2,55,食品科学（同院校）
+materials,60,材料：传统行业，创业比例低
+env_science,60,环境科学：政策驱动，创业比例中
+mining,70,采矿：资源型，创业门槛极高
+metallurgy,65,冶金：国企为主
+textile,60,纺织：传统制造
+light_chem,55,轻化工：日化创业容易
+biotech,50,生物工程：科研创业难度高
+survey,65,测绘：资质导向
+hydro,65,水利：国企为主
+geo_eng,65,地质工程：国企为主
+
+# 理科 → 基础研究创业难
+physics,75,物理：基础学科，创业比例低
+chemistry,75,化学：实验学科，创业比例低
+math,70,数学：金融/IT转型多，直接创业少
+bio,65,生物：科研导向
+
+# 商科 → 创业比例高
+finance,40,金融：银行/投行打工为主，创业比例中等
+accounting,45,会计：财务咨询创业容易
+marketing,25,市场营销：最容易创业的专业之一
+business_admin,30,工商管理：创业比例高
+economics,50,经济：研究/打工为主
+hr,45,人力资源：咨询创业容易
+intl_trade,35,国贸：跨境创业
+pub_admin,60,公共管理：政府就业为主
+biz_admin,30,工商管理（同院校）
+
+# 法学/社科 → 创业难
+law,75,法学：律所打工为主，创业需资源
+political_sci,75,政治学：政府/研究为主
+sociology,65,社会学：调研机构为主
+social_work,65,社会工作：非营利组织为主
+ir,80,国际关系：政府/外交为主
+
+# 医学 → 创业难
+clinical_med,65,临床医学：医院就业为主，创业极难
+tcm,60,中医：诊所创业可能，但门槛高
+pharmacy,55,药学：医药销售/研发为主
+nursing,70,护理：医院就业为主
+
+# 文科/语言 → 创业难
+chinese_lit,70,中文：教育/媒体为主
+history,75,历史：学术/教育为主
+philosophy,80,哲学：学术为主，创业比例极低
+journalism,70,新闻：媒体打工为主
+journalism_v2,70,新闻传播（同院校）
+english,60,英语：教育/翻译为主
+japanese,55,日语：日企就业为主
+russian,60,俄语：俄语区贸易
+french,55,法语：非洲市场
+german,55,德语：德企就业
+spanish,50,西班牙语：拉美市场
+korean,55,韩语：韩企就业
+arabic,65,阿拉伯语：一带一路相关
+portuguese,50,葡萄牙语：巴西市场
+italian,55,意大利语：小语种
+thai,55,泰语：泰国市场
+vietnamese,55,越南语：越南市场
+persian,60,波斯语：伊朗市场
+turkish,60,土耳其语：中东市场
+indonesian,55,印尼语：东南亚市场
+ukrainian,60,乌克兰语：东欧市场
+polish,55,波兰语：中东欧
+dutch,55,荷兰语：欧洲市场
+hebrew,60,希伯来语：以色列相关
+hindi,55,印地语：印度市场
+swahili,55,斯瓦希里语：非洲市场
+hungarian,55,匈牙利语：中东欧
+
+# 艺术/教育 → 两极分化
+film_directing,70,编导：影视行业打工为主
+fine_arts,75,美术：艺术培训创业可能但收入不稳定
+music,75,音乐：培训/演出为主
+dance,70,舞蹈：培训/演出为主
+education,55,教育学：教育培训创业容易
+pre_education,50,学前教育：幼儿园创业可能
+psychology,60,心理学：咨询创业可能但资质要求高
+
+# 建筑/规划 → 中等
+urban_plan,50,城规：设计院为主
+landscape,50,园林：景观设计创业可能
+
+# 别名（同一专业不同id命名）
+material,60,材料科学与工程 = materials
+chem,55,化学工程与工艺 ≈ chemistry
+env,60,环境工程 = env_science
+mech,60,机械工程 = mechanical
+med,65,临床医学 = clinical_med
+food_sci,55,食品科学与工程 = food_science
