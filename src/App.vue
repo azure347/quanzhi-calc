@@ -14,6 +14,7 @@ import Toast from './components/Toast.vue'
 import RunningMan from './components/RunningMan.vue'
 import TourGuide from './components/TourGuide.vue'
 import CompareCard from './components/CompareCard.vue'
+import ShareCard from './components/ShareCard.vue'
 
 import { calculateIndex, getScoreSegment } from './composables/useCalculator.js'
 import { usePersistence } from './composables/usePersistence.js'
@@ -43,6 +44,7 @@ onMounted(() => {
 // Tour
 const showTour = ref(!localStorage.getItem('quanzhi-tour-done') && !window.location.search)
 const tourStep = ref(0)
+const showShareCard = ref(false)
 
 const searchInput = ref('')
 
@@ -174,6 +176,12 @@ function copyShareUrl() {
   })
 }
 
+function openShareCard() {
+  showShareCard.value = true
+}
+
+const tierLabel = computed(() => data.tierConfig[state.currentTier]?.label || '本科')
+
 // Provide current state to children via provide
 provide('currentMajor', currentMajor)
 provide('currentTier', currentTier)
@@ -187,6 +195,7 @@ provide('dimensions', data.dimensions)
 <template>
   <Toast ref="toastRef" />
   <TourGuide v-if="showTour" :step="tourStep" :onClose="nextTourStep" />
+  <ShareCard v-if="showShareCard" :major="currentMajor" :score="score" :segment="segment" :tier="tierLabel" @close="showShareCard = false" />
 
   <!-- Header -->
   <div class="header">
@@ -204,7 +213,8 @@ provide('dimensions', data.dimensions)
       >
         {{ isFavorited ? '⭐' : '☆' }}
       </button>
-      <button class="icon-btn" @click="copyShareUrl" title="分享结果">🔗</button>
+      <button class="icon-btn" @click="copyShareUrl" title="分享链接">🔗</button>
+      <button class="icon-btn" @click="openShareCard" title="分享卡片">🖼️</button>
     </div>
   </div>
 
