@@ -8,10 +8,14 @@ const emit = defineEmits(['close'])
 const top10 = computed(() => {
   return data.majors
     .map(major => {
-      const sub = major.tiers['bachelor'].subfields['通用']
+      const bachelor = major.tiers && major.tiers['bachelor']
+      const subfields = bachelor && bachelor.subfields
+      const sub = subfields && (subfields['通用'] || Object.values(subfields)[0])
+      if (!sub || !sub.scores) return null
       const score = calculateIndex(sub.scores, [3,3,3,3,3,3,3,3,3])
       return { id: major.id, name: major.name, emoji: major.categoryEmoji, category: major.category, score }
     })
+    .filter(Boolean)
     .sort((a, b) => b.score - a.score)
     .slice(0, 10)
     .map((m, i) => ({ ...m, rank: i + 1 }))
