@@ -15,6 +15,7 @@ import RunningMan from './components/RunningMan.vue'
 import TourGuide from './components/TourGuide.vue'
 import CompareCard from './components/CompareCard.vue'
 import ShareCard from './components/ShareCard.vue'
+import Leaderboard from './components/Leaderboard.vue'
 
 import { calculateIndex, getScoreSegment } from './composables/useCalculator.js'
 import { usePersistence } from './composables/usePersistence.js'
@@ -45,6 +46,7 @@ onMounted(() => {
 const showTour = ref(!localStorage.getItem('quanzhi-tour-done') && !window.location.search)
 const tourStep = ref(0)
 const showShareCard = ref(false)
+const showLeaderboard = ref(false)
 
 const searchInput = ref('')
 
@@ -196,6 +198,7 @@ provide('dimensions', data.dimensions)
   <Toast ref="toastRef" />
   <TourGuide v-if="showTour" :step="tourStep" :onClose="nextTourStep" />
   <ShareCard v-if="showShareCard" :major="currentMajor" :score="score" :segment="segment" :tier="tierLabel" @close="showShareCard = false" />
+  <Leaderboard v-if="showLeaderboard" @close="showLeaderboard = false" />
 
   <!-- Header -->
   <div class="header">
@@ -215,6 +218,7 @@ provide('dimensions', data.dimensions)
       </button>
       <button class="icon-btn" @click="copyShareUrl" title="分享链接">🔗</button>
       <button class="icon-btn" @click="openShareCard" title="分享卡片">🖼️</button>
+      <button class="icon-btn" @click="showLeaderboard = true" title="天坑排行">🏆</button>
     </div>
   </div>
 
