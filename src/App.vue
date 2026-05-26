@@ -24,7 +24,7 @@ const state = reactive({
   currentMajorId: 'cs',
   currentTier: 'bachelor',
   currentSubfield: '通用',
-  weights: [3, 3, 3, 3, 3, 3],
+  weights: [3, 3, 3, 3, 3, 3, 3, 3, 3],
   compareList: [],
   favorites: [],
   recentMajors: [],

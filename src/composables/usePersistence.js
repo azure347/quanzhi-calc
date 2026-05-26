@@ -27,6 +27,11 @@ export function usePersistence(state) {
 
   load()
 
+  // Ensure weights always has 9 elements (3 new dims added)
+  if (state.weights.length < 9) {
+    state.weights = [...state.weights, ...Array(9 - state.weights.length).fill(3)]
+  }
+
   watch(
     () => [state.currentMajorId, state.currentTier, state.currentSubfield, state.weights, state.compareList, state.favorites, state.recentMajors, state.theme],
     save,
