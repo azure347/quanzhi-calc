@@ -9,7 +9,9 @@ const props = defineProps({
 const canvasRef = ref(null)
 
 const dimKeys = ['employment', 'salary', 'degree_threshold', 'environment', 'prospect', 'transfer_diff']
+const newDimKeys = ['civil_exam', 'overseas_study', 'entrepreneurship']
 const colors = ['#e94560', '#e67e22', '#d63031', '#0984e3', '#6c5ce7', '#00b894']
+const newColors = ['#00cec9', '#fdcb6e', '#6c5ce7']
 
 function draw() {
   const canvas = canvasRef.value
@@ -53,7 +55,6 @@ function draw() {
     ctx.lineTo(cx + r * Math.cos(angle), cy + r * Math.sin(angle))
     ctx.stroke()
 
-    // Label
     const lx = cx + (r + 20) * Math.cos(angle)
     const ly = cy + (r + 20) * Math.sin(angle)
     ctx.fillStyle = '#555'
@@ -67,7 +68,7 @@ function draw() {
   ctx.beginPath()
   for (let i = 0; i < n; i++) {
     const angle = (Math.PI * 2 * i) / n - Math.PI / 2
-    const val = props.scores[dimKeys[i]] / 100
+    const val = (props.scores[dimKeys[i]] || 0) / 100
     const x = cx + r * val * Math.cos(angle)
     const y = cy + r * val * Math.sin(angle)
     i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y)
@@ -82,7 +83,7 @@ function draw() {
   // Dots
   for (let i = 0; i < n; i++) {
     const angle = (Math.PI * 2 * i) / n - Math.PI / 2
-    const val = props.scores[dimKeys[i]] / 100
+    const val = (props.scores[dimKeys[i]] || 0) / 100
     const x = cx + r * val * Math.cos(angle)
     const y = cy + r * val * Math.sin(angle)
     ctx.beginPath()
@@ -95,6 +96,13 @@ function draw() {
   }
 }
 
+function barColor(val) {
+  if (val < 30) return '#2ecc71'
+  if (val < 50) return '#e67e22'
+  if (val < 70) return '#e67e22'
+  return '#e94560'
+}
+
 onMounted(draw)
 watch(() => [props.scores, props.dimensions], draw, { deep: true })
 </script>
@@ -103,8 +111,27 @@ watch(() => [props.scores, props.dimensions], draw, { deep: true })
   <div class="radar-wrap">
     <div class="radar-title">6维能力图（越大越惨）</div>
     <canvas ref="canvasRef" class="radar-canvas"></canvas>
+
+    <!-- New 3 dimensions as bar indicators -->
+    <div class="new-dims-wrap">
+      <div class="new-dims-label">附加维度</div>
+      <div class="new-dim-row" v-for="(key, i) in newDimKeys" :key="key">
+        <span class="new-dim-name">{{ dimensions.find(d => d.key === key)?.funnyName || key }}</span>
+        <div class="new-dim-bar-bg">
+          <div
+            class="new-dim-bar-fill"
+            :style="{
+              width: (scores[key] || 0) + '%',
+              background: barColor(scores[key] || 0)
+            }"
+          ></div>
+        </div>
+        <span class="new-dim-score" :style="{ color: barColor(scores[key] || 0) }">{{ scores[key] || 0 }}</span>
+      </div>
+    </div>
+
     <div class="radar-legend">
-      <div v-for="(dim, i) in dimensions" :key="dim.key" class="legend-item">
+      <div v-for="(dim, i) in dimensions.slice(0, 6)" :key="dim.key" class="legend-item">
         <span class="legend-dot" :style="{ background: colors[i] }"></span>
         <span class="legend-label">{{ dim.funnyName }}</span>
       </div>
@@ -116,6 +143,29 @@ watch(() => [props.scores, props.dimensions], draw, { deep: true })
 .radar-wrap { text-align: center; }
 .radar-title { font-size: 13px; color: #999; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
 .radar-canvas { width: 100%; height: 300px; display: block; }
+
+.new-dims-wrap {
+  margin-top: 16px; padding: 14px 16px;
+  background: #fafafa; border-radius: 12px;
+  border: 1px solid #f0f0f0;
+}
+.new-dims-label {
+  font-size: 11px; color: #aaa; text-transform: uppercase;
+  letter-spacing: 1px; margin-bottom: 10px;
+}
+.new-dim-row {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+}
+.new-dim-row:last-child { margin-bottom: 0; }
+.new-dim-name { font-size: 13px; color: #555; width: 70px; text-align: left; flex-shrink: 0; }
+.new-dim-bar-bg {
+  flex: 1; height: 8px; background: #e8e8e8; border-radius: 4px; overflow: hidden;
+}
+.new-dim-bar-fill {
+  height: 100%; border-radius: 4px; transition: width 0.5s;
+}
+.new-dim-score { font-size: 13px; font-weight: 700; width: 28px; text-align: right; flex-shrink: 0; }
+
 .radar-legend {
   display: flex; flex-wrap: wrap; justify-content: center;
   gap: 8px 16px; margin-top: 10px;
