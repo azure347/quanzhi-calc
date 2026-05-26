@@ -78,6 +78,7 @@ body.red-glow::before {
 /* Header */
 .header {
   text-align: center; padding: 28px 20px 8px; position: relative; z-index: 1;
+  overflow: hidden;
 }
 .header h1 {
   font-size: 2.4em; font-weight: 900;
@@ -93,8 +94,8 @@ body.red-glow::before {
   display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; z-index: 1;
 }
 
-.left-col { display: flex; flex-direction: column; gap: 16px; }
-.right-col { display: flex; flex-direction: column; gap: 16px; }
+.left-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; overflow: hidden; }
+.right-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 
 /* Search */
 .search-wrap {

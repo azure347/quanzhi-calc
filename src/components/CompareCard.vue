@@ -10,7 +10,7 @@ const props = defineProps({
 
 const emit = defineEmits(['remove', 'select'])
 
-const dimKeys = ['employment', 'salary', 'degree_threshold', 'environment', 'prospect', 'transfer_diff']
+const dimKeys = ['employment', 'salary', 'degree_threshold', 'environment', 'prospect', 'transfer_diff', 'civil_exam', 'overseas_study', 'entrepreneurship']
 
 const compareMajors = computed(() =>
   props.compareList.map(id => {
@@ -89,17 +89,17 @@ function scoreColor(val) {
 <style scoped>
 .compare-card {
   overflow: hidden;
+  min-width: 0;
 }
 .compare-header {
   display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 12px; flex-shrink: 0;
 }
 .compare-title { font-size: 15px; font-weight: 700; }
 .compare-hint { font-size: 12px; color: #aaa; }
-.compare-table-wrap { overflow-x: auto; }
+.compare-table-wrap { overflow-x: auto; min-width: 0; max-width: 100%; }
 .compare-table {
-  width: 100%; border-collapse: collapse; font-size: 13px;
-  min-width: 480px;
+  border-collapse: collapse; font-size: 13px;
 }
 .compare-table th {
   text-align: left; padding: 6px 8px; color: #aaa;
