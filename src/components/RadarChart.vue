@@ -9,9 +9,7 @@ const props = defineProps({
 const canvasRef = ref(null)
 
 const dimKeys = ['employment', 'salary', 'degree_threshold', 'environment', 'prospect', 'transfer_diff']
-const newDimKeys = ['civil_exam', 'overseas_study', 'entrepreneurship']
 const colors = ['#e94560', '#e67e22', '#d63031', '#0984e3', '#6c5ce7', '#00b894']
-const newColors = ['#00cec9', '#fdcb6e', '#6c5ce7']
 
 function draw() {
   const canvas = canvasRef.value
@@ -96,7 +94,10 @@ function draw() {
   }
 }
 
-function barColor(val) {
+const newDimKeys = ['civil_exam', 'overseas_study', 'entrepreneurship']
+const newDimColors = ['#00cec9', '#fdcb6e', '#a29bfe']
+
+function scoreColor(val) {
   if (val < 30) return '#2ecc71'
   if (val < 50) return '#e67e22'
   if (val < 70) return '#e67e22'
@@ -112,21 +113,39 @@ watch(() => [props.scores, props.dimensions], draw, { deep: true })
     <div class="radar-title">6维能力图（越大越惨）</div>
     <canvas ref="canvasRef" class="radar-canvas"></canvas>
 
-    <!-- New 3 dimensions as bar indicators -->
-    <div class="new-dims-wrap">
-      <div class="new-dims-label">附加维度</div>
-      <div class="new-dim-row" v-for="(key, i) in newDimKeys" :key="key">
-        <span class="new-dim-name">{{ dimensions.find(d => d.key === key)?.funnyName || key }}</span>
-        <div class="new-dim-bar-bg">
-          <div
-            class="new-dim-bar-fill"
-            :style="{
-              width: (scores[key] || 0) + '%',
-              background: barColor(scores[key] || 0)
-            }"
-          ></div>
-        </div>
-        <span class="new-dim-score" :style="{ color: barColor(scores[key] || 0) }">{{ scores[key] || 0 }}</span>
+    <!-- Mini gauge pods for 3 new dimensions -->
+    <div class="gauge-row">
+      <div
+        v-for="(key, i) in newDimKeys"
+        :key="key"
+        class="gauge-pod"
+        :style="{ borderColor: newDimColors[i] + '44' }"
+      >
+        <div class="gauge-title">{{ dimensions.find(d => d.key === key)?.funnyName }}</div>
+        <svg class="gauge-svg" viewBox="0 0 80 80">
+          <!-- Background arc -->
+          <circle
+            cx="40" cy="40" r="32"
+            fill="none"
+            stroke="#f0f0f0"
+            stroke-width="6"
+          />
+          <!-- Score arc -->
+          <circle
+            cx="40" cy="40" r="32"
+            fill="none"
+            :stroke="scoreColor(scores[key] || 0)"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-dasharray="201"
+            :stroke-dashoffset="201 - (scores[key] || 0) / 100 * 201"
+            transform="rotate(-90 40 40)"
+            class="gauge-arc"
+          />
+          <text x="40" y="36" text-anchor="middle" class="gauge-score" :fill="scoreColor(scores[key] || 0)">{{ scores[key] || 0 }}</text>
+          <text x="40" y="52" text-anchor="middle" class="gauge-label">分</text>
+        </svg>
+        <div class="gauge-desc">{{ dimensions.find(d => d.key === key)?.description.split('，')[0] }}</div>
       </div>
     </div>
 
@@ -144,27 +163,27 @@ watch(() => [props.scores, props.dimensions], draw, { deep: true })
 .radar-title { font-size: 13px; color: #999; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
 .radar-canvas { width: 100%; height: 300px; display: block; }
 
-.new-dims-wrap {
-  margin-top: 16px; padding: 14px 16px;
-  background: #fafafa; border-radius: 12px;
-  border: 1px solid #f0f0f0;
+.gauge-row {
+  display: flex; justify-content: center; gap: 20px;
+  margin: 16px 0 0;
 }
-.new-dims-label {
-  font-size: 11px; color: #aaa; text-transform: uppercase;
-  letter-spacing: 1px; margin-bottom: 10px;
+.gauge-pod {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 12px 8px 8px;
+  border-radius: 14px;
+  border: 1.5px solid;
+  background: #fafafa;
+  width: 100px;
 }
-.new-dim-row {
-  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+.gauge-title {
+  font-size: 12px; color: #888; margin-bottom: 6px;
+  white-space: nowrap;
 }
-.new-dim-row:last-child { margin-bottom: 0; }
-.new-dim-name { font-size: 13px; color: #555; width: 70px; text-align: left; flex-shrink: 0; }
-.new-dim-bar-bg {
-  flex: 1; height: 8px; background: #e8e8e8; border-radius: 4px; overflow: hidden;
-}
-.new-dim-bar-fill {
-  height: 100%; border-radius: 4px; transition: width 0.5s;
-}
-.new-dim-score { font-size: 13px; font-weight: 700; width: 28px; text-align: right; flex-shrink: 0; }
+.gauge-svg { width: 76px; height: 76px; }
+.gauge-arc { transition: stroke-dasharray 0.5s; }
+.gauge-score { font-size: 18px; font-weight: 800; font-family: "Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+.gauge-label { font-size: 10px; fill: #bbb; font-family: "Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+.gauge-desc { font-size: 10px; color: #aaa; margin-top: 4px; text-align: center; max-width: 90px; }
 
 .radar-legend {
   display: flex; flex-wrap: wrap; justify-content: center;
