@@ -16,7 +16,9 @@ const compareMajors = computed(() =>
   props.compareList.map(id => {
     const major = data.majors.find(m => m.id === id)
     if (!major) return null
-    const sub = major.tiers['bachelor'].subfields['通用']
+    const subfields = major.tiers && major.tiers['bachelor'] && major.tiers['bachelor'].subfields
+    const sub = subfields && (subfields['通用'] || Object.values(subfields)[0])
+    if (!sub || !sub.scores) return null
     return {
       id,
       name: major.name,

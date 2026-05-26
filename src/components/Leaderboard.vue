@@ -5,6 +5,8 @@ import { calculateIndex } from '../composables/useCalculator.js'
 
 const emit = defineEmits(['close'])
 
+// Leaderboard top10
+
 const top10 = computed(() => {
   return data.majors
     .map(major => {
