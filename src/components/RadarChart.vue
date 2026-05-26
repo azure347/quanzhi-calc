@@ -103,6 +103,12 @@ watch(() => [props.scores, props.dimensions], draw, { deep: true })
   <div class="radar-wrap">
     <div class="radar-title">6维能力图（越大越惨）</div>
     <canvas ref="canvasRef" class="radar-canvas"></canvas>
+    <div class="radar-legend">
+      <div v-for="(dim, i) in dimensions" :key="dim.key" class="legend-item">
+        <span class="legend-dot" :style="{ background: colors[i] }"></span>
+        <span class="legend-label">{{ dim.funnyName }}</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -110,4 +116,11 @@ watch(() => [props.scores, props.dimensions], draw, { deep: true })
 .radar-wrap { text-align: center; }
 .radar-title { font-size: 13px; color: #999; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
 .radar-canvas { width: 100%; height: 300px; display: block; }
+.radar-legend {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 8px 16px; margin-top: 10px;
+}
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.legend-label { font-size: 12px; color: #666; }
 </style>

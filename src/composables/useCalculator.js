@@ -3,6 +3,7 @@
  *
  * 公式: Index = Σ(scores[i] × weights[i]) / Σ(weights[i])
  * 全0权重时回退为均权(3)
+ * 新增维度(civil_exam/overseas_study/entrepreneurship)使用固定权重3
  */
 
 export function calculateIndex(scores, weights) {
@@ -20,6 +21,15 @@ export function calculateIndex(scores, weights) {
   if (wSum === 0) {
     for (let i = 0; i < dimKeys.length; i++) {
       sSum += scores[dimKeys[i]] * 3
+      wSum += 3
+    }
+  }
+
+  // New dimensions use fixed weight of 3
+  const newDimKeys = ['civil_exam', 'overseas_study', 'entrepreneurship']
+  for (const key of newDimKeys) {
+    if (scores[key] !== undefined) {
+      sSum += scores[key] * 3
       wSum += 3
     }
   }

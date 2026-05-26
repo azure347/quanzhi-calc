@@ -140,4 +140,64 @@ body.red-glow::before {
 @media (max-width: 720px) {
   .main { grid-template-columns: 1fr; }
   .header h1 { font-size: 1.6em; }
+  .header { padding: 20px 16px 8px; }
+  .card { padding: 16px; }
+  .footer { padding: 16px; }
+  .search-wrap { padding: 0 12px; }
+  .suggestions { padding: 0 12px; }
+  .radar-canvas { height: 220px; }
+  .footer { font-size: 14px; }
+}
+
+/* Dark mode */
+body.dark {
+  --bg: #1a1a2e;
+  --card: #252542;
+  --text: #e8e8f0;
+  --muted: #8888aa;
+  --accent: #e94560;
+}
+body.dark::before {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(233,69,96,0.06) 0%, transparent 45%),
+    radial-gradient(circle at 88% 72%, rgba(230,126,34,0.06) 0%, transparent 45%);
+}
+body.dark::after { display: none; }
+body.dark .card {
+  background: #252542;
+  border-color: #3a3a5c;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+body.dark .card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 0 1px rgba(233,69,96,0.15);
+  border-color: rgba(233,69,96,0.2);
+}
+body.dark .search-box {
+  background: #252542;
+  border-color: #3a3a5c;
+  color: #e8e8f0;
+}
+body.dark .search-box:focus { border-color: var(--accent); }
+body.dark .header .sub { color: #8888aa; }
+body.dark .footer { color: #8888aa; }
+body.dark .tag { background: #3a3a5c; color: #aaa; border-color: #3a3a5c; }
+body.dark .tag:hover { background: var(--accent); color: #fff; }
+body.dark .detail-table tr:nth-child(odd) { background: #2a2a48; }
+body.dark .detail-table .k { color: #8888aa; }
+body.dark .detail-table .v { color: #e8e8f0; }
+body.dark .methodology { border-color: #3a3a5c; }
+body.dark .methodology summary { color: #8888aa; }
+body.dark .methodology-content { background: #1e1e38; }
+body.dark .score-bar-wrap { background: #3a3a5c; }
+body.dark .icon-btn { background: rgba(37,37,66,0.9); border-color: #3a3a5c; }
+body.dark .icon-btn:hover { background: #2a2a48; }
+body.dark .fav-chip { background: #2a2a48; color: #e67e22; border-color: #3a3a5c; }
+body.dark .compare-table th { color: #8888aa; border-color: #3a3a5c; }
+body.dark .compare-table td { border-color: #2a2a48; }
+body.dark .compare-row:hover { background: #2a1a1a; }
+
+/* Mobile touch targets */
+@media (max-width: 480px) {
+  .tag, .suggestions .tag { min-height: 44px; padding: 8px 14px; }
+  .action-btn { min-height: 36px; padding: 8px 16px; min-width: 60px; }
 }

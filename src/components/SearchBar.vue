@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 
 const props = defineProps({
   majors: { type: Array, required: true },
+  recentMajors: { type: Array, default: () => [] },
   modelValue: { type: String, default: '' }
 })
 
@@ -12,12 +13,25 @@ const inputVal = ref(props.modelValue)
 
 const filteredMajors = computed(() => {
   const q = inputVal.value.trim().toLowerCase()
-  if (!q) return props.majors
+  if (!q) return []
   return props.majors.filter(m =>
     m.name.toLowerCase().includes(q) ||
     m.aliases.some(a => a.toLowerCase().includes(q))
   )
 })
+
+const showRecent = computed(() => !inputVal.value.trim() && props.recentMajors.length > 0)
+
+const popularMajors = computed(() =>
+  props.majors.slice(0, 6)
+)
+
+function highlight(text, q) {
+  if (!q) return text
+  const idx = text.toLowerCase().indexOf(q.toLowerCase())
+  if (idx < 0) return text
+  return text.slice(0, idx) + '<mark>' + text.slice(idx, idx + q.length) + '</mark>' + text.slice(idx + q.length)
+}
 
 function onInput(e) {
   inputVal.value = e.target.value
@@ -44,14 +58,41 @@ defineExpose({ setValue: (v) => { inputVal.value = v } })
     />
   </div>
   <div class="suggestions">
-    <template v-if="filteredMajors.length === 0">
-      <div class="no-result">恭喜，这个专业暂时安全，或者太冷门了没人骂 😅</div>
+    <!-- Recent -->
+    <template v-if="showRecent">
+      <div class="section-label">最近看过</div>
+      <span
+        v-for="id in recentMajors"
+        :key="'r-' + id"
+        class="tag tag-recent"
+        @click="selectMajor(majors.find(m => m.id === id))"
+      >{{ majors.find(m => m.id === id)?.categoryEmoji }} {{ majors.find(m => m.id === id)?.name }}</span>
+      <div class="section-label" style="margin-top:8px">热门专业</div>
     </template>
-    <span
-      v-for="m in filteredMajors" :key="m.id"
-      class="tag"
-      @click="selectMajor(m)"
-    >{{ m.categoryEmoji }} {{ m.name }}</span>
+
+    <!-- Popular (shown when input is empty and no recent) -->
+    <template v-if="!inputVal.trim() && !showRecent">
+      <span
+        v-for="m in popularMajors"
+        :key="m.id"
+        class="tag"
+        @click="selectMajor(m)"
+      >{{ m.categoryEmoji }} {{ m.name }}</span>
+    </template>
+
+    <!-- Search results -->
+    <template v-if="inputVal.trim()">
+      <template v-if="filteredMajors.length === 0">
+        <div class="no-result">恭喜，这个专业暂时安全，或者太冷门了没人骂 😅</div>
+      </template>
+      <span
+        v-for="m in filteredMajors"
+        :key="m.id"
+        class="tag"
+        @click="selectMajor(m)"
+        v-html="m.categoryEmoji + ' ' + highlight(m.name, inputVal.trim())"
+      ></span>
+    </template>
   </div>
 </template>
 
@@ -74,6 +115,11 @@ defineExpose({ setValue: (v) => { inputVal.value = v } })
 .suggestions {
   max-width: 560px; margin: 4px auto 0; padding: 0 16px;
   display: flex; flex-wrap: wrap; gap: 6px; position: relative; z-index: 1;
+  align-items: center;
+}
+.section-label {
+  font-size: 11px; color: #aaa; text-transform: uppercase;
+  letter-spacing: 1px; width: 100%; margin-bottom: 2px;
 }
 .tag {
   padding: 6px 16px; border-radius: 16px; font-size: 13px;
@@ -83,6 +129,15 @@ defineExpose({ setValue: (v) => { inputVal.value = v } })
 .tag:hover {
   background: var(--accent); color: #fff; border-color: var(--accent);
   transform: translateY(-1px); box-shadow: 0 4px 12px rgba(233,69,96,0.2);
+}
+.tag-recent {
+  background: #f0f7ff; color: #3498db; border-color: #c0dcf0;
+}
+.tag-recent:hover {
+  background: #3498db; color: #fff; border-color: #3498db;
+}
+:deep(mark) {
+  background: #ffe066; color: #555; border-radius: 2px; padding: 0 1px;
 }
 .no-result { text-align: center; padding: 30px; color: #aaa; font-size: 15px; width: 100%; }
 </style>

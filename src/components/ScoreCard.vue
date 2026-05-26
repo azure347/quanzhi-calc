@@ -7,8 +7,12 @@ const props = defineProps({
   tier: { type: String, required: true },
   subfield: { type: String, required: true },
   weights: { type: Array, required: true },
-  segments: { type: Array, required: true }
+  segments: { type: Array, required: true },
+  isFavorited: { type: Boolean, default: false },
+  canAddCompare: { type: Boolean, default: true }
 })
+
+const emit = defineEmits(['toggleFavorite', 'addCompare'])
 
 const scores = computed(() => {
   const t = props.major.tiers[props.tier]
@@ -41,6 +45,14 @@ const barStyle = computed(() => ({
       <span class="score-emoji">{{ segment.emoji }}</span>
     </div>
     <div class="major-roast">💬 {{ major.roast }}</div>
+    <div class="score-actions">
+      <button class="action-btn" :class="{ favorited: isFavorited }" @click="emit('toggleFavorite')">
+        {{ isFavorited ? '⭐ 已收藏' : '☆ 收藏' }}
+      </button>
+      <button class="action-btn" @click="emit('addCompare')">
+        + 添加对比
+      </button>
+    </div>
   </div>
 </template>
 
@@ -71,6 +83,21 @@ const barStyle = computed(() => ({
   font-size: 13px; color: #d63031; text-align: center; padding: 8px 10px;
   background: rgba(233,69,96,0.04); border-radius: 10px;
   border-left: 3px solid #e94560; margin-top: 8px; line-height: 1.5;
+}
+.score-actions {
+  display: flex; justify-content: center; gap: 8px; margin-top: 12px;
+  flex-wrap: wrap;
+}
+.action-btn {
+  padding: 6px 14px; border-radius: 16px; font-size: 13px;
+  border: 1px solid #e0e0e0; background: #fff; color: #555;
+  cursor: pointer; transition: all 0.2s; font-weight: 500;
+}
+.action-btn:hover {
+  background: #f5f5f5; transform: translateY(-1px);
+}
+.action-btn.favorited {
+  background: #fff3e0; color: #e67e22; border-color: #e67e22;
 }
 
 @media (max-width: 720px) {
