@@ -35,7 +35,7 @@ export function useUrlSync(state) {
     if (params.has('w')) {
       const w = params.get('w')
       const parts = w.split(',').map(Number)
-      if (parts.length === 6 && parts.every(n => !isNaN(n))) {
+      if (parts.length === 9 && parts.every(n => !isNaN(n))) {
         updates.weights = parts.map(n => Math.max(0, Math.min(5, n)))
       }
     }
