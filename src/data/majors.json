@@ -2591,26 +2591,6 @@
                 "industry_trend": "全球最热赛道，没有之一"
               }
             },
-            "前端开发": {
-              "scores": {
-                "employment": 40,
-                "salary": 35,
-                "degree_threshold": 40,
-                "environment": 5,
-                "prospect": 35,
-                "transfer_diff": 15,
-                "civil_exam": 60,
-                "overseas_study": 25,
-                "entrepreneurship": 35
-              },
-              "details": {
-                "employment_rate": "约80%从事本专业",
-                "avg_salary": "10k-18k/月",
-                "typical_roles": "前端工程师",
-                "work_env_desc": "办公室/远程",
-                "industry_trend": "竞争激烈但需求大"
-              }
-            },
             "网络安全": {
               "scores": {
                 "employment": 40,
@@ -2629,6 +2609,26 @@
                 "typical_roles": "安全工程师",
                 "work_env_desc": "办公室/远程",
                 "industry_trend": "数字化刚需，越来越重要"
+              }
+            },
+            "后端开发": {
+              "scores": {
+                "employment": 40,
+                "salary": 35,
+                "degree_threshold": 40,
+                "environment": 5,
+                "prospect": 35,
+                "transfer_diff": 15,
+                "civil_exam": 60,
+                "overseas_study": 25,
+                "entrepreneurship": 35
+              },
+              "details": {
+                "employment_rate": "约80%从事本专业",
+                "avg_salary": "10k-18k/月",
+                "typical_roles": "前端工程师",
+                "work_env_desc": "办公室/远程",
+                "industry_trend": "竞争激烈但需求大"
               }
             }
           }
@@ -2678,26 +2678,6 @@
                 "industry_trend": "硕士是AI行业标配门槛"
               }
             },
-            "前端开发": {
-              "scores": {
-                "employment": 40,
-                "salary": 35,
-                "degree_threshold": 27,
-                "environment": 5,
-                "prospect": 35,
-                "transfer_diff": 12,
-                "civil_exam": 60,
-                "overseas_study": 25,
-                "entrepreneurship": 35
-              },
-              "details": {
-                "employment_rate": "约85%从事本专业",
-                "avg_salary": "14k-22k/月",
-                "typical_roles": "高级前端",
-                "work_env_desc": "办公室/远程",
-                "industry_trend": "全栈化是趋势"
-              }
-            },
             "网络安全": {
               "scores": {
                 "employment": 40,
@@ -2716,6 +2696,26 @@
                 "typical_roles": "安全专家",
                 "work_env_desc": "办公室/远程",
                 "industry_trend": "攻防对抗永不过时"
+              }
+            },
+            "后端开发": {
+              "scores": {
+                "employment": 40,
+                "salary": 35,
+                "degree_threshold": 27,
+                "environment": 5,
+                "prospect": 35,
+                "transfer_diff": 12,
+                "civil_exam": 60,
+                "overseas_study": 25,
+                "entrepreneurship": 35
+              },
+              "details": {
+                "employment_rate": "约85%从事本专业",
+                "avg_salary": "14k-22k/月",
+                "typical_roles": "高级前端",
+                "work_env_desc": "办公室/远程",
+                "industry_trend": "全栈化是趋势"
               }
             }
           }
@@ -2765,26 +2765,6 @@
                 "industry_trend": "AI博士=行走的印钞机"
               }
             },
-            "前端开发": {
-              "scores": {
-                "employment": 40,
-                "salary": 35,
-                "degree_threshold": 13,
-                "environment": 5,
-                "prospect": 35,
-                "transfer_diff": 10,
-                "civil_exam": 60,
-                "overseas_study": 25,
-                "entrepreneurship": 35
-              },
-              "details": {
-                "employment_rate": "约90%从事本专业",
-                "avg_salary": "20k-30k/月",
-                "typical_roles": "前端架构师",
-                "work_env_desc": "办公室/远程",
-                "industry_trend": "博士做前端属于兴趣驱动"
-              }
-            },
             "网络安全": {
               "scores": {
                 "employment": 40,
@@ -2803,6 +2783,26 @@
                 "typical_roles": "首席安全官",
                 "work_env_desc": "办公室/远程",
                 "industry_trend": "安全博士极度稀缺"
+              }
+            },
+            "后端开发": {
+              "scores": {
+                "employment": 40,
+                "salary": 35,
+                "degree_threshold": 13,
+                "environment": 5,
+                "prospect": 35,
+                "transfer_diff": 10,
+                "civil_exam": 60,
+                "overseas_study": 25,
+                "entrepreneurship": 35
+              },
+              "details": {
+                "employment_rate": "约90%从事本专业",
+                "avg_salary": "20k-30k/月",
+                "typical_roles": "前端架构师",
+                "work_env_desc": "办公室/远程",
+                "industry_trend": "博士做前端属于兴趣驱动"
               }
             }
           }
