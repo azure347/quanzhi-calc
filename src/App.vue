@@ -16,6 +16,7 @@ import TourGuide from './components/TourGuide.vue'
 import CompareCard from './components/CompareCard.vue'
 import ShareCard from './components/ShareCard.vue'
 import Leaderboard from './components/Leaderboard.vue'
+import Danmaku from './components/Danmaku.vue'
 
 import { calculateIndex, getScoreSegment } from './composables/useCalculator.js'
 import { usePersistence } from './composables/usePersistence.js'
@@ -196,6 +197,7 @@ provide('dimensions', data.dimensions)
 
 <template>
   <Toast ref="toastRef" />
+  <Danmaku />
   <TourGuide v-if="showTour" :step="tourStep" :onClose="nextTourStep" />
   <ShareCard v-if="showShareCard" :major="currentMajor" :score="score" :segment="segment" :tier="tierLabel" @close="showShareCard = false" />
   <Leaderboard v-if="showLeaderboard" @close="showLeaderboard = false" />
