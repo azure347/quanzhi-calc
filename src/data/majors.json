@@ -2571,6 +2571,26 @@
                 "industry_trend": "互联网虽冷但仍是最好赛道"
               }
             },
+            "后端开发": {
+              "scores": {
+                "employment": 45,
+                "salary": 28,
+                "degree_threshold": 35,
+                "environment": 8,
+                "prospect": 30,
+                "transfer_diff": 20,
+                "civil_exam": 55,
+                "overseas_study": 28,
+                "entrepreneurship": 40
+              },
+              "details": {
+                "employment_rate": "约80%从事本专业对口",
+                "avg_salary": "15k-28k/月",
+                "typical_roles": "Java/Python/Go后端、架构师、DevOps",
+                "work_env_desc": "互联网公司办公室为主",
+                "industry_trend": "需求稳定但投递竞争激烈，AI辅助编程降低门槛提升效率"
+              }
+            },
             "人工智能": {
               "scores": {
                 "employment": 40,
@@ -2610,26 +2630,6 @@
                 "work_env_desc": "办公室/远程",
                 "industry_trend": "数字化刚需，越来越重要"
               }
-            },
-            "后端开发": {
-              "scores": {
-                "employment": 40,
-                "salary": 35,
-                "degree_threshold": 40,
-                "environment": 5,
-                "prospect": 35,
-                "transfer_diff": 15,
-                "civil_exam": 60,
-                "overseas_study": 25,
-                "entrepreneurship": 35
-              },
-              "details": {
-                "employment_rate": "约80%从事本专业",
-                "avg_salary": "10k-18k/月",
-                "typical_roles": "前端工程师",
-                "work_env_desc": "办公室/远程",
-                "industry_trend": "竞争激烈但需求大"
-              }
             }
           }
         },
@@ -2656,6 +2656,26 @@
                 "typical_roles": "高级工程师",
                 "work_env_desc": "CBD办公室",
                 "industry_trend": "学历加成明显"
+              }
+            },
+            "后端开发": {
+              "scores": {
+                "employment": 45,
+                "salary": 28,
+                "degree_threshold": 35,
+                "environment": 8,
+                "prospect": 30,
+                "transfer_diff": 20,
+                "civil_exam": 55,
+                "overseas_study": 28,
+                "entrepreneurship": 40
+              },
+              "details": {
+                "employment_rate": "约80%从事本专业对口",
+                "avg_salary": "15k-28k/月",
+                "typical_roles": "Java/Python/Go后端、架构师、DevOps",
+                "work_env_desc": "互联网公司办公室为主",
+                "industry_trend": "需求稳定但投递竞争激烈，AI辅助编程降低门槛提升效率"
               }
             },
             "人工智能": {
@@ -2697,26 +2717,6 @@
                 "work_env_desc": "办公室/远程",
                 "industry_trend": "攻防对抗永不过时"
               }
-            },
-            "后端开发": {
-              "scores": {
-                "employment": 40,
-                "salary": 35,
-                "degree_threshold": 27,
-                "environment": 5,
-                "prospect": 35,
-                "transfer_diff": 12,
-                "civil_exam": 60,
-                "overseas_study": 25,
-                "entrepreneurship": 35
-              },
-              "details": {
-                "employment_rate": "约85%从事本专业",
-                "avg_salary": "14k-22k/月",
-                "typical_roles": "高级前端",
-                "work_env_desc": "办公室/远程",
-                "industry_trend": "全栈化是趋势"
-              }
             }
           }
         },
@@ -2743,6 +2743,26 @@
                 "typical_roles": "研究员、技术总监",
                 "work_env_desc": "顶级办公室",
                 "industry_trend": "天花板极高"
+              }
+            },
+            "后端开发": {
+              "scores": {
+                "employment": 45,
+                "salary": 28,
+                "degree_threshold": 35,
+                "environment": 8,
+                "prospect": 30,
+                "transfer_diff": 20,
+                "civil_exam": 55,
+                "overseas_study": 28,
+                "entrepreneurship": 40
+              },
+              "details": {
+                "employment_rate": "约80%从事本专业对口",
+                "avg_salary": "15k-28k/月",
+                "typical_roles": "Java/Python/Go后端、架构师、DevOps",
+                "work_env_desc": "互联网公司办公室为主",
+                "industry_trend": "需求稳定但投递竞争激烈，AI辅助编程降低门槛提升效率"
               }
             },
             "人工智能": {
@@ -2783,26 +2803,6 @@
                 "typical_roles": "首席安全官",
                 "work_env_desc": "办公室/远程",
                 "industry_trend": "安全博士极度稀缺"
-              }
-            },
-            "后端开发": {
-              "scores": {
-                "employment": 40,
-                "salary": 35,
-                "degree_threshold": 13,
-                "environment": 5,
-                "prospect": 35,
-                "transfer_diff": 10,
-                "civil_exam": 60,
-                "overseas_study": 25,
-                "entrepreneurship": 35
-              },
-              "details": {
-                "employment_rate": "约90%从事本专业",
-                "avg_salary": "20k-30k/月",
-                "typical_roles": "前端架构师",
-                "work_env_desc": "办公室/远程",
-                "industry_trend": "博士做前端属于兴趣驱动"
               }
             }
           }
