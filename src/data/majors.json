@@ -1954,14 +1954,14 @@
           "subfields": {
             "通用": {
               "scores": {
-                "employment": 75,
-                "salary": 80,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 88,
                 "environment": 15,
-                "prospect": 55,
-                "transfer_diff": 40,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -1974,14 +1974,14 @@
             },
             "翻译": {
               "scores": {
-                "employment": 70,
-                "salary": 77,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 88,
                 "environment": 15,
-                "prospect": 52,
-                "transfer_diff": 45,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -1994,14 +1994,14 @@
             },
             "商务英语": {
               "scores": {
-                "employment": 65,
-                "salary": 72,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 83,
                 "environment": 15,
-                "prospect": 47,
-                "transfer_diff": 37,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -2014,14 +2014,14 @@
             },
             "英语教育": {
               "scores": {
-                "employment": 70,
-                "salary": 75,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 88,
                 "environment": 15,
-                "prospect": 50,
-                "transfer_diff": 37,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -2041,14 +2041,14 @@
           "subfields": {
             "通用": {
               "scores": {
-                "employment": 65,
-                "salary": 68,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 72,
                 "environment": 12,
-                "prospect": 48,
-                "transfer_diff": 35,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -2061,14 +2061,14 @@
             },
             "翻译": {
               "scores": {
-                "employment": 60,
-                "salary": 65,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 72,
                 "environment": 12,
-                "prospect": 45,
-                "transfer_diff": 40,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -2081,14 +2081,14 @@
             },
             "商务英语": {
               "scores": {
-                "employment": 55,
-                "salary": 60,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 67,
                 "environment": 12,
-                "prospect": 40,
-                "transfer_diff": 32,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -2101,14 +2101,14 @@
             },
             "英语教育": {
               "scores": {
-                "employment": 60,
-                "salary": 63,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 72,
                 "environment": 12,
-                "prospect": 43,
-                "transfer_diff": 32,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -2128,14 +2128,14 @@
           "subfields": {
             "通用": {
               "scores": {
-                "employment": 50,
-                "salary": 52,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 45,
                 "environment": 10,
-                "prospect": 38,
-                "transfer_diff": 30,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -2148,14 +2148,14 @@
             },
             "翻译": {
               "scores": {
-                "employment": 45,
-                "salary": 47,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 45,
                 "environment": 10,
-                "prospect": 35,
-                "transfer_diff": 35,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -2168,14 +2168,14 @@
             },
             "商务英语": {
               "scores": {
-                "employment": 40,
-                "salary": 44,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 40,
                 "environment": 10,
-                "prospect": 30,
-                "transfer_diff": 27,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -2188,14 +2188,14 @@
             },
             "英语教育": {
               "scores": {
-                "employment": 45,
-                "salary": 47,
+                "employment": 85,
+                "salary": 88,
                 "degree_threshold": 45,
                 "environment": 10,
-                "prospect": 33,
-                "transfer_diff": 27,
-                "civil_exam": 60,
-                "overseas_study": 10,
+                "prospect": 68,
+                "transfer_diff": 55,
+                "civil_exam": 72,
+                "overseas_study": 50,
                 "entrepreneurship": 60
               },
               "details": {
@@ -2553,14 +2553,14 @@
           "subfields": {
             "通用": {
               "scores": {
-                "employment": 25,
-                "salary": 20,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 35,
                 "environment": 5,
-                "prospect": 15,
+                "prospect": 35,
                 "transfer_diff": 15,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -2573,14 +2573,14 @@
             },
             "人工智能": {
               "scores": {
-                "employment": 0,
-                "salary": 0,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 20,
                 "environment": 5,
-                "prospect": 0,
+                "prospect": 35,
                 "transfer_diff": 5,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -2593,14 +2593,14 @@
             },
             "前端开发": {
               "scores": {
-                "employment": 30,
-                "salary": 28,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 40,
                 "environment": 5,
-                "prospect": 18,
+                "prospect": 35,
                 "transfer_diff": 15,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -2613,14 +2613,14 @@
             },
             "网络安全": {
               "scores": {
-                "employment": 10,
-                "salary": 12,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 27,
                 "environment": 5,
-                "prospect": 5,
+                "prospect": 35,
                 "transfer_diff": 10,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -2640,14 +2640,14 @@
           "subfields": {
             "通用": {
               "scores": {
-                "employment": 20,
-                "salary": 15,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 22,
                 "environment": 5,
-                "prospect": 10,
+                "prospect": 35,
                 "transfer_diff": 12,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -2660,14 +2660,14 @@
             },
             "人工智能": {
               "scores": {
-                "employment": 0,
-                "salary": 0,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 7,
                 "environment": 5,
-                "prospect": 0,
+                "prospect": 35,
                 "transfer_diff": 2,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -2680,14 +2680,14 @@
             },
             "前端开发": {
               "scores": {
-                "employment": 25,
-                "salary": 23,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 27,
                 "environment": 5,
-                "prospect": 13,
+                "prospect": 35,
                 "transfer_diff": 12,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -2700,14 +2700,14 @@
             },
             "网络安全": {
               "scores": {
-                "employment": 5,
-                "salary": 7,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 14,
                 "environment": 5,
-                "prospect": 0,
+                "prospect": 35,
                 "transfer_diff": 7,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -2727,14 +2727,14 @@
           "subfields": {
             "通用": {
               "scores": {
-                "employment": 15,
-                "salary": 10,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 8,
                 "environment": 5,
-                "prospect": 5,
+                "prospect": 35,
                 "transfer_diff": 10,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -2747,14 +2747,14 @@
             },
             "人工智能": {
               "scores": {
-                "employment": 0,
-                "salary": 0,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 0,
                 "environment": 5,
-                "prospect": 0,
+                "prospect": 35,
                 "transfer_diff": 0,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -2767,14 +2767,14 @@
             },
             "前端开发": {
               "scores": {
-                "employment": 20,
-                "salary": 18,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 13,
                 "environment": 5,
-                "prospect": 8,
+                "prospect": 35,
                 "transfer_diff": 10,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -2787,14 +2787,14 @@
             },
             "网络安全": {
               "scores": {
-                "employment": 0,
-                "salary": 2,
+                "employment": 40,
+                "salary": 35,
                 "degree_threshold": 0,
                 "environment": 5,
-                "prospect": 0,
+                "prospect": 35,
                 "transfer_diff": 5,
-                "civil_exam": 50,
-                "overseas_study": 30,
+                "civil_exam": 60,
+                "overseas_study": 25,
                 "entrepreneurship": 35
               },
               "details": {
@@ -8793,6 +8793,99 @@
       ]
     },
     {
+      "id": "tourism",
+      "name": "旅游管理",
+      "aliases": [
+        "旅游",
+        "旅游管理",
+        "会展经济与管理"
+      ],
+      "category": "管理学",
+      "categoryEmoji": "🎪",
+      "roast": "你的专业是\"旅游\"，但你的工作是在携程上帮人订酒店。行业萎缩、薪资垫底、考公无岗，张雪峰说\"别来\"你还不信？",
+      "tiers": {
+        "bachelor": {
+          "label": "本科",
+          "emoji": "🎓",
+          "subfields": {
+            "通用": {
+              "scores": {
+                "employment": 88,
+                "salary": 90,
+                "degree_threshold": 55,
+                "environment": 40,
+                "prospect": 85,
+                "transfer_diff": 75,
+                "civil_exam": 85,
+                "overseas_study": 30,
+                "entrepreneurship": 80
+              },
+              "details": {
+                "employment_rate": "45%",
+                "avg_salary": "4500-6000元/月",
+                "typical_roles": "导游、计调、OTA运营、酒店管理",
+                "work_env_desc": "室内+室外，旺季加班多",
+                "industry_trend": "后疫情恢复慢，行业集中度低"
+              }
+            }
+          }
+        },
+        "master": {
+          "label": "硕士",
+          "emoji": "📚",
+          "subfields": {
+            "通用": {
+              "scores": {
+                "employment": 82,
+                "salary": 85,
+                "degree_threshold": 65,
+                "environment": 40,
+                "prospect": 80,
+                "transfer_diff": 70,
+                "civil_exam": 80,
+                "overseas_study": 35,
+                "entrepreneurship": 75
+              },
+              "details": {
+                "employment_rate": "50%",
+                "avg_salary": "6000-8000元/月",
+                "typical_roles": "旅游规划、文旅策划、酒店管理",
+                "work_env_desc": "项目管理为主",
+                "industry_trend": "行业复苏但竞争激烈"
+              }
+            }
+          }
+        },
+        "doctor": {
+          "label": "博士",
+          "emoji": "🔬",
+          "subfields": {
+            "通用": {
+              "scores": {
+                "employment": 60,
+                "salary": 55,
+                "degree_threshold": 80,
+                "environment": 30,
+                "prospect": 60,
+                "transfer_diff": 80,
+                "civil_exam": 75,
+                "overseas_study": 40,
+                "entrepreneurship": 70
+              },
+              "details": {
+                "employment_rate": "65%",
+                "avg_salary": "8000-12000元/月",
+                "typical_roles": "高校教师、旅游研究",
+                "work_env_desc": "教研结合",
+                "industry_trend": "学术需求稳定"
+              }
+            }
+          }
+        }
+      },
+      "alternatives": []
+    },
+    {
       "id": "pub_admin",
       "name": "行政管理",
       "aliases": [
@@ -9800,7 +9893,7 @@
       }
     },
     {
-      "id": "history",
+      "id": "history_dup1",
       "name": "历史学",
       "aliases": [
         "历史"
@@ -9909,7 +10002,7 @@
       }
     },
     {
-      "id": "philosophy",
+      "id": "philosophy_dup1",
       "name": "哲学",
       "aliases": [
         "哲学"
@@ -10018,7 +10111,7 @@
       }
     },
     {
-      "id": "english",
+      "id": "english_dup1",
       "name": "英语",
       "aliases": [
         "英语",
@@ -10238,7 +10331,7 @@
       }
     },
     {
-      "id": "law",
+      "id": "law_dup1",
       "name": "法学",
       "aliases": [
         "法律",
@@ -10348,7 +10441,7 @@
       }
     },
     {
-      "id": "finance",
+      "id": "finance_dup1",
       "name": "金融学",
       "aliases": [
         "金融"
@@ -10529,13 +10622,13 @@
           "subfields": {
             "通用": {
               "scores": {
-                "employment": 65,
-                "salary": 75,
+                "employment": 78,
+                "salary": 82,
                 "degree_threshold": 60,
                 "environment": 30,
-                "prospect": 55,
+                "prospect": 70,
                 "transfer_diff": 50,
-                "civil_exam": 60,
+                "civil_exam": 75,
                 "overseas_study": 40,
                 "entrepreneurship": 45
               },
@@ -10549,13 +10642,13 @@
             },
             "银行方向": {
               "scores": {
-                "employment": 50,
-                "salary": 65,
+                "employment": 78,
+                "salary": 82,
                 "degree_threshold": 55,
                 "environment": 25,
-                "prospect": 50,
+                "prospect": 70,
                 "transfer_diff": 55,
-                "civil_exam": 60,
+                "civil_exam": 75,
                 "overseas_study": 40,
                 "entrepreneurship": 45
               },
@@ -10569,13 +10662,13 @@
             },
             "事务所方向": {
               "scores": {
-                "employment": 45,
-                "salary": 70,
+                "employment": 78,
+                "salary": 82,
                 "degree_threshold": 60,
                 "environment": 45,
-                "prospect": 40,
+                "prospect": 70,
                 "transfer_diff": 50,
-                "civil_exam": 60,
+                "civil_exam": 75,
                 "overseas_study": 40,
                 "entrepreneurship": 45
               },
@@ -10596,13 +10689,13 @@
           "subfields": {
             "通用": {
               "scores": {
-                "employment": 50,
-                "salary": 65,
+                "employment": 78,
+                "salary": 82,
                 "degree_threshold": 50,
                 "environment": 30,
-                "prospect": 45,
+                "prospect": 70,
                 "transfer_diff": 45,
-                "civil_exam": 60,
+                "civil_exam": 75,
                 "overseas_study": 40,
                 "entrepreneurship": 45
               },
@@ -10623,13 +10716,13 @@
           "subfields": {
             "通用": {
               "scores": {
-                "employment": 40,
-                "salary": 55,
+                "employment": 78,
+                "salary": 82,
                 "degree_threshold": 30,
                 "environment": 30,
-                "prospect": 40,
+                "prospect": 70,
                 "transfer_diff": 40,
-                "civil_exam": 60,
+                "civil_exam": 75,
                 "overseas_study": 40,
                 "entrepreneurship": 45
               },
@@ -10756,7 +10849,7 @@
       }
     },
     {
-      "id": "marketing",
+      "id": "marketing_dup1",
       "name": "市场营销",
       "aliases": [
         "营销",
@@ -11235,7 +11328,7 @@
       }
     },
     {
-      "id": "nursing",
+      "id": "nursing_dup1",
       "name": "护理学",
       "aliases": [
         "护理"
@@ -11582,7 +11675,7 @@
       }
     },
     {
-      "id": "journalism",
+      "id": "journalism_dup1",
       "name": "新闻传播",
       "aliases": [
         "新闻",
