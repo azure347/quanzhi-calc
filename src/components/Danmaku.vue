@@ -55,7 +55,7 @@ class Bullet {
   constructor(canvasW, canvasH) {
     this.text = corpus[Math.floor(Math.random() * corpus.length)]
     this.color = colors[Math.floor(Math.random() * colors.length)]
-    this.speed = 1.5 + Math.random() * 2.5
+    this.speed = 0.5 + Math.random() * 1.0
     this.y = Math.random() * (canvasH * 0.7) + canvasH * 0.1
     this.x = canvasW + Math.random() * 200
     this.fontSize = 14 + Math.floor(Math.random() * 10)
