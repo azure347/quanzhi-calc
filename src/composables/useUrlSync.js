@@ -67,5 +67,5 @@ export function useUrlSync(state) {
     }
   }, 500)
 
-  return { updateUrl }
+  return { updateUrl, stop: () => clearInterval(unwatch) }
 }
