@@ -98,7 +98,7 @@ function draw() {
   spawnBullet(w, h)
   ctx.clearRect(0, 0, w, h)
   bullets.forEach(b => { b.update(); b.draw(ctx) })
-  bullets = bullets.filter(b => b.isOffScreen(ctx))
+  bullets = bullets.filter(b => !b.isOffScreen(ctx))
 
   animFrameId = requestAnimationFrame(draw)
 }
