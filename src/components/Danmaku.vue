@@ -5,6 +5,7 @@ const canvasRef = ref(null)
 let ctx = null
 let animFrameId = null
 let bullets = []
+let active = false
 
 const corpus = [
   '快跑！别来！',
@@ -71,7 +72,7 @@ class Bullet {
     ctx.fillText(this.text, this.x, this.y)
   }
 
-  isOffScreen() {
+  isOffScreen(ctx) {
     return this.x < -ctx.measureText(this.text).width
   }
 }
@@ -83,6 +84,7 @@ function spawnBullet(canvasW, canvasH) {
 }
 
 function draw() {
+  if (!active) return
   const canvas = canvasRef.value
   if (!canvas) return
   const dpr = window.devicePixelRatio || 1
@@ -96,17 +98,21 @@ function draw() {
   spawnBullet(w, h)
   ctx.clearRect(0, 0, w, h)
   bullets.forEach(b => { b.update(); b.draw(ctx) })
-  bullets = bullets.filter(b => !b.isOffScreen())
+  bullets = bullets.filter(b => b.isOffScreen(ctx))
 
   animFrameId = requestAnimationFrame(draw)
 }
 
 onMounted(() => {
+  active = true
   draw()
 })
 
 onUnmounted(() => {
+  active = false
   if (animFrameId) cancelAnimationFrame(animFrameId)
+  bullets = []
+  ctx = null
 })
 </script>
 
