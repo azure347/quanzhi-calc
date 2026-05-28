@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  base: '/quanzhi-calc/',
+  base: process.env.VITE_BASE_PATH || '/quanzhi-calc/',
   plugins: [vue()],
   server: {
     host: '0.0.0.0',
