@@ -18,9 +18,12 @@ import ShareCard from './components/ShareCard.vue'
 import Leaderboard from './components/Leaderboard.vue'
 import Danmaku from './components/Danmaku.vue'
 
-import { calculateIndex, getScoreSegment } from './composables/useCalculator.js'
+import { usePkRoomWebSocket } from './composables/usePkRoomWebSocket.js'
+import PkArena from './components/PkArena.vue'
+import PkEntryModal from './components/PkEntryModal.vue'
 import { usePersistence } from './composables/usePersistence.js'
 import { useUrlSync } from './composables/useUrlSync.js'
+import { calculateIndex, getScoreSegment } from './composables/useCalculator.js'
 
 // ── State ──
 const state = reactive({
@@ -35,6 +38,56 @@ const state = reactive({
 })
 usePersistence(state)
 useUrlSync(state)
+
+// PK Mode (WebSocket version)
+const {
+  players,
+  isInPkMode,
+  pkUrl,
+  localSlot,
+  winnerScore,
+  joinRoom,
+  leaveRoom,
+  updateMyData,
+  isConnected
+} = usePkRoomWebSocket()
+const showPkEntry = ref(false)
+const pkEditData = ref({ majorId: '', weights: [3,3,3,3,3,3,3,3,3], nickname: '' })
+
+function openPkEntry(edit = false) {
+  if (edit) {
+    const local = players.value.find(p => p.slot === localSlot.value)
+    pkEditData.value = {
+      majorId: local?.majorId || '',
+      weights: local?.weights?.length ? [...local.weights] : [3,3,3,3,3,3,3,3,3],
+      nickname: local?.nickname || ''
+    }
+  }
+  showPkEntry.value = true
+}
+
+function onPkStart(pkData) {
+  const success = joinRoom(pkData.majorId, pkData.weights, pkData.nickname)
+  if (success) {
+    showPkEntry.value = false
+    // 计算分数并更新到服务器
+    const major = data.majors.find(m => m.id === pkData.majorId)
+    if (major) {
+      const tier = major.tiers['bachelor']
+      const sub = tier?.subfields?.['通用']
+      if (sub) {
+        const score = calculateIndex(sub.scores, pkData.weights)
+        updateMyData(pkData.majorId, pkData.weights, pkData.nickname, score)
+      }
+    }
+    navigator.clipboard.writeText(window.location.href)
+  }
+}
+
+function onPkLeave() {
+  leaveRoom()
+  showPkEntry.value = false
+}
 
 // Theme init
 onMounted(() => {
@@ -201,7 +254,31 @@ provide('dimensions', data.dimensions)
   <TourGuide v-if="showTour" :step="tourStep" :onClose="nextTourStep" />
   <ShareCard v-if="showShareCard" :major="currentMajor" :score="score" :segment="segment" :tier="tierLabel" @close="showShareCard = false" />
   <Leaderboard v-if="showLeaderboard" @close="showLeaderboard = false" />
+  <PkEntryModal
+    v-if="showPkEntry"
+    :initial-major-id="pkEditData.majorId"
+    :initial-weights="pkEditData.weights"
+    :initial-nickname="pkEditData.nickname"
+    :is-edit="!!pkEditData.majorId"
+    @close="showPkEntry = false"
+    @start="onPkStart"
+  />
 
+  <!-- PK Arena (replaces normal view) -->
+  <PkArena
+    v-if="isInPkMode"
+    :players="players"
+    :segments="data.scoreSegments"
+    :is-in-pk-mode="isInPkMode"
+    :pk-url="pkUrl"
+    :local-slot="localSlot"
+    :winner-score="winnerScore"
+    :on-edit="() => openPkEntry(true)"
+    :on-leave="onPkLeave"
+  />
+
+  <!-- Normal Single-User View (hidden in PK mode) -->
+  <template v-if="!isInPkMode">
   <!-- Header -->
   <div class="header">
     <h1>天坑劝退计算器</h1>
@@ -221,6 +298,7 @@ provide('dimensions', data.dimensions)
       <button class="icon-btn" @click="copyShareUrl" title="分享链接">🔗</button>
       <button class="icon-btn" @click="openShareCard" title="分享卡片">🖼️</button>
       <button class="icon-btn" @click="showLeaderboard = true" title="天坑排行">🏆</button>
+      <button class="pk-btn" @click="openPkEntry(false)" title="多人PK">⚔️ PK</button>
     </div>
   </div>
 
@@ -342,6 +420,7 @@ provide('dimensions', data.dimensions)
     本计算器纯属娱乐，请勿当真 · 数据来源：知乎、小红书、脉脉、B站评论区
     <span class="footer-emoji">🎓</span>
   </div>
+  </template><!-- end normal view -->
 </template>
 
 <style scoped>
@@ -393,6 +472,23 @@ provide('dimensions', data.dimensions)
 }
 
 .runner-card { padding: 12px 20px !important; }
+
+.pk-btn {
+  background: linear-gradient(135deg, #e94560, #e67e22);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pk-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(233,69,96,0.3);
+}
 
 @media (max-width: 720px) {
   .main { grid-template-columns: 1fr; }

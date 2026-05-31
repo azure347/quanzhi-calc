@@ -52,15 +52,19 @@ export function useUrlSync(state) {
 
   function updateUrl() {
     const search = encode()
-    const newUrl = `${window.location.pathname}?${search}`
+    // Preserve PK hash if present
+    const hash = window.location.hash
+    const newUrl = `${window.location.pathname}${hash}?${search}`
     window.history.replaceState(null, '', newUrl)
   }
 
   // Apply URL params to state on init (takes priority over localStorage)
   applyFromUrl()
 
-  // Sync URL whenever state changes
+  // Sync URL whenever state changes (skip if in PK mode with hash)
   const unwatch = setInterval(() => {
+    // Don't sync URL if in PK mode - the hash carries the PK session
+    if (window.location.hash.startsWith('#pk/')) return
     const search = encode()
     if (window.location.search !== `?${search}`) {
       updateUrl()
